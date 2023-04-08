@@ -53,7 +53,7 @@ if (window.location.href.indexOf(SITE_URL) !== -1) {
 
         for (let i = 0; i < textChunks.length; i++) {
           let chunkButton = document.createElement("button");
-          chunkButton.textContent = `Часть ${i + 1}`;
+          chunkButton.textContent = `Part ${i + 1}`;
           chunkButton.style.marginBottom = "5px";
           chunkButton.style.color = "black";
           chunkButton.addEventListener("click", function () {
@@ -64,18 +64,12 @@ if (window.location.href.indexOf(SITE_URL) !== -1) {
             absoluteButton.disabled = false;
 
             textarea.focus();
-            textarea.selectionStart = textarea.selectionEnd = 0;
-
-            let keydownEvent = new KeyboardEvent("keydown", { keyCode: 13 });
-            let keyupEvent = new KeyboardEvent("keyup", { keyCode: 13 });
-            absoluteButton.dispatchEvent(keydownEvent);
-            absoluteButton.dispatchEvent(keyupEvent);
           });
           popup.appendChild(chunkButton);
         }
 
         let closeButton = document.createElement("button");
-        closeButton.textContent = "Закрыть";
+        closeButton.textContent = "close";
         closeButton.style.color = "black";
         closeButton.addEventListener("click", function () {
           document.body.removeChild(popup);
